@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Montserrat:wght@300;400&family=Roboto:wght@300;400&display=swap');
+
+:root{
+    --violet: #d33bfd;
+}
+
+body{ 
+    color: white;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+    background: linear-gradient(#13181D, #20212e, #341b47);
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5% 0 5%;
+}
+
+header nav h1{
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--violet);
+}
+
+header nav .right{
+    display: flex;
+    align-items: center;
+}
+
+header nav .right p{
+    margin: 0 15px 0 0;
+    color: #ccc;
+}
+
+header nav .right p:hover{
+    cursor: pointer;
+    color: white;
+}
+
+header nav .right button{
+    padding: 5px 15px;
+    background-color: inherit;
+    border: 1px solid var(--violet);
+    color: var(--violet);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+header nav .right button:hover{
+    background-color: var(--violet);
+    color: inherit;
+}
+
+.presentation{
+    padding: 30px 5%;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.presentation .product-presentation{
+    width: 100%;
+    flex-shrink: 3; /* Va équilibrer la taille de deux élément cote a cote en prenant de la marge en trop pour la rajouter 
+                       sur un ITEM pour que ce soit autant gros ou grand a droite qu'a gauche ou inversement */
+}
+
+.presentation .product-presentation h1{
+    margin: 0;
+    font-size: 4vw;  /* VW = View with, en gros le titre va prendre 4% de la taille de l'ecran de l'utilisateur */
+    width: 80%;
+}
+
+.presentation .product-presentation p{
+    font-weight: 300; /* Correspond a la graisse de la police importé. Dans ce cas c'est une police importé light 300 donc 
+                         ici on a retiré toute la graisse de la police */
+    color: #e9e9e9;
+}
+
+.presentation .product-presentation button{
+    margin-top: 20px;
+    padding: 15px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;  /* Pour retirer la bordure par defaut un peu degueulasse */
+    outline: none; /* Pour retirer la bordure qui apparaît quand on clique sur le bouton */ 
+    cursor: pointer;
+}
+
+.presentation .image-presantation img{
+    width: 100%;    
+}
+
+.first .product-presentation button{
+    background-color: var(--violet);
+    border: 1px solid var(--violet);
+    color: white;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.first .product-presentation button:hover{
+    background-color: inherit;
+    color: var(--violet);
+}
+
+.first .product-presentation .small-images{
+    margin-top: 30px;
+    display: flex; /*Pour aligner les images*/
+    flex-wrap: wrap;
+    align-items: center; /*Pour les centrer au niveau du container small-images*/
+}
+
+.first .product-presentation .small-images .small{
+    padding: 20px;
+    background-color: #33314d;
+    margin: 0 15px 15px 0; /*15px en bas car en vue telephone l'image passe en bas (flexwrap) et a donc besoin d'une marge aussi*/
+    border-radius: 20px;
+    transition: filter 0.5s;
+}
+
+.first .product-presentation .small-images .small:hover{
+    filter: brightness(50%); /*Pour baisser la luminosité de 50% quand on passe la souris sur l'image*/
+}
+
+.first .product-presentation .small-images .small img{
+    width: 120px;
+}
+
+.second{
+    margin: 0;
+    background-color: #13181d;
+}
+
+.second .product-presentation .new{
+    color: var(--violet);
+}
+
+.second .product-presentation button{
+    background-color: inherit;
+    border: 1px solid var(--violet);
+    color: var(--violet);
+    transition: 0.5s;
+}
+
+.second .product-presentation button:hover{
+    background-color: var(--violet);
+    color: white;
+}
+
+footer{
+    margin: 0;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+footer h3{
+    color: var(--violet);
+}
+
+footer p{
+    cursor: pointer;
+    color: grey;
+}
+
+footer p:hover{
+    color: white;
+}
+
+
+
+
+
+@media screen and (max-width: 640px) {
+    header nav .right p{
+        display: none;
+    }
+    .presentation .product-presentation h1{
+        font-size: 2em; /*2 fois la taille initiale du texte en question ou autre*/
+    }
+    .presentation .image-presentation{
+        display: none;
+    }
+    .first .product-presentation .small-images .small img{
+        width: 90px;
+    }
+    footer{
+        justify-content: center;
+    }
+    footer .column{
+        width: 80%;
+    }
+}
